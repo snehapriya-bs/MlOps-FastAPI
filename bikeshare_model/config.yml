@@ -1,0 +1,136 @@
+training_data_file: bike-sharing-dataset.csv
+
+target: cnt
+
+pipeline_name: bikerental_model
+pipeline_save_file: bikerental_model_output 
+
+
+features:
+  - dteday
+  - yr # --> generated from the dteday
+  - mnth # # --> generated from the dteday
+  - season
+  - hr 
+  - holiday 
+  - weekday
+  - workingday  
+  - weathersit   
+  - temp      
+  - atemp
+  - hum
+  - windspeed
+
+unused_features:
+  # - dteday
+  - casual
+  - registered
+
+
+yr_var: yr
+mnth_var: mnth
+season_var: season
+weathersit_var: weathersit
+holiday_var: holiday
+workingday_var: workingday
+hr_var: hr
+
+# Features inside processing pipeline
+
+dteday_var: dteday  #  imputatation 
+  
+temp_var: temp # Outlier Handling
+
+atemp_var: atemp # Outlier Handling
+
+hum_var: hum # Outlier Handling
+
+wind_speed_var: windspeed # Outlier Handling
+
+weekday_var: weekday # One Hot Encoding
+
+
+yr_mapping:
+  2011: 0
+  2012: 1
+
+mnth_mapping:
+  January: 0
+  February: 1
+  March: 2
+  April: 3
+  May: 4
+  June: 5
+  July: 6
+  August: 7
+  September: 8
+  October: 9
+  November: 10
+  December: 11
+
+
+weather_mapping:
+  Heavy Rain: 0
+  Light Rain: 1
+  Mist: 2
+  Clear: 3
+
+season_mapping:
+  spring: 0
+  winter: 1
+  summer: 2
+  fall: 3
+
+
+
+holiday_mapping:
+  Yes: 0
+  No: 1
+
+workingday_mapping:
+  No: 0
+  Yes: 1
+
+
+hour_mapping:
+  6am: 0
+  7am: 1
+  8am: 2
+  9am: 3
+  10am: 4
+  11am: 5
+  12pm: 6
+  1pm: 7
+  2pm: 8
+  3pm: 9
+  4pm: 10
+  5pm: 11
+  6pm: 12
+  7pm: 13
+  8pm: 14
+  9pm: 15
+  10pm: 16
+  11pm: 17
+  12am: 18
+  1am: 19
+  2am: 20
+  3am: 21
+  4am: 22
+  5am: 23
+
+
+weekday_mapping:
+  Mon: 0
+  Tue: 1
+  Wed: 2
+  Thu: 3
+  Fri: 4
+  Sat: 5
+  Sun: 6
+  
+test_size: 0.20
+random_state: 42
+n_estimators: 100
+max_depth: 10
+max_features: 3
+

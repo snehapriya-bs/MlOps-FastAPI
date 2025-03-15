@@ -1,0 +1,12 @@
+requests
+numpy
+pandas
+seaborn
+matplotlib
+scikit-learn
+joblib
+pydantic
+strictyaml
+ruamel.yaml
+setuptools
+

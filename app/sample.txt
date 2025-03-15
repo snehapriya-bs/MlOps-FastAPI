@@ -1,0 +1,10 @@
+curl -X POST "http://127.0.0.1:8001/api/v1/predict" -H "Content-Type: application/json" --data-raw "{\"inputs\":[{\"dteday\":\"2012-11-05\",\"season\":\"winter\",\"hr\":\"6am\",\"holiday\":\"No\",\"weekday\":\"Mon\",\"workingday\":\"Yes\",\"weathersit\":\"Mist\",\"temp\":6.1,\"atemp\":3.0014,\"hum\":49.0,\"windspeed\":19.0012,\"casual\":4,\"registered\":135}]}"
+
+netstat -an | find "8001"
+uvicorn.run(app, host="localhost", port=8001)
+netsh advfirewall firewall add rule name="FastAPI" dir=in action=allow protocol=TCP localport=8001
+python -m venv C:\Users\sneha\OneDrive\Desktop\ML\Module5\MiniProject\bikesharemodel-main (2)\bikesharemodel-main\venv
+ venv\Scripts\activate
+ First install the build package: ...> pip install --upgrade build
+and then
+Run: ...> python -m build
