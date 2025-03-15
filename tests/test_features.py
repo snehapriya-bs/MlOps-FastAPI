@@ -31,7 +31,7 @@ def test_weekday_imputer(sample_input_data):
 
     assert transformed['weekday'].isnull().sum() == 0
 
-    logging.debug(f'Transformed weekdays {transformed['weekday'].tolist()}')
+    logging.debug(f'Transformed weekdays transformed['weekday'].tolist()}')
     expected = {'Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'}
 
     assert expected.issubset(set(transformed['weekday'].tolist()))
