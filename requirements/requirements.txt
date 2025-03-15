@@ -9,4 +9,4 @@ pydantic
 strictyaml
 ruamel.yaml
 setuptools
-
+build
