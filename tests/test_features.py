@@ -81,8 +81,3 @@ def test_custom_outlier_handler(sample_input_data):
     # Ensure at least one outlier was clipped (if applicable)
     if (X[numerical_col] < outlier_handler.lower_bound).sum() > 0 or (X[numerical_col] > outlier_handler.upper_bound).sum() > 0:
         assert not X.equals(transformed), "No outliers were clipped, but expected some changes"
-
-
-
-
-
