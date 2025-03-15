@@ -34,3 +34,7 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
+
+
+       # Commit all changed files back to the repository
+      #- uses: stefanzweifel/git-auto-commit-action@v5
