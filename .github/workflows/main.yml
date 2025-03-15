@@ -31,15 +31,12 @@ jobs:
       - name: Train pipeline
         run: |
           python bikeshare_model/train_pipeline.py
+          
+      - name: Predict file
+        run: |
+          python bikeshare_model/predict.py
+
 
       - name: Test with pytest
         run: |
           pytest
-          
-      - name: Create *.whl file
-        run: |
-          python -m build
-
-
-      #Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v5
